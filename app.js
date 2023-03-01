@@ -62,10 +62,10 @@ const setupEventListener = () => {
         const toCurrency = document.querySelector('#toCurrency');
         const amount = document.querySelector('#amount');
         const convertResultEl = document.querySelector('#convertResult');
-
+        
+            // setting up the success and error condition 
         try {
             const rate = await getCurrencyRates(fromCurrency.value, toCurrency.value);
-
             const amountValue = Number(amount.value);
             const conversionRate = Number(amountValue * rate).toFixed(2);
             convertResultEl.textContent = `${amountValue} ${fromCurrency.value} = ${conversionRate} ${toCurrency.value}`;
